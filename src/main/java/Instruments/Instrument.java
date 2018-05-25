@@ -1,7 +1,8 @@
 package Instruments;
 import Items.Item;
+import behaviours.IPlay;
 
-public abstract class Instrument extends Item {
+public abstract class Instrument extends Item{
 
    private String colour;
     private String material;
@@ -25,4 +26,8 @@ public abstract class Instrument extends Item {
     public InstrumentType getInstrumentType() {
         return this.instrumentType;
     }
+
+
+
+
 }
