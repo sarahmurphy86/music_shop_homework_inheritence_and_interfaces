@@ -1,9 +1,11 @@
 package Items;
 
-public abstract class Item {
-    private String description;
-    private double buyingPrice;
-    private double sellingPrice;
+import behaviours.ISell;
+
+public abstract class Item implements ISell {
+    protected String description;
+    protected double buyingPrice;
+    protected double sellingPrice;
 
     public Item(String description, double buyingPrice, double sellingPrice){
         this.description = description;
@@ -21,5 +23,8 @@ public abstract class Item {
 
     public double getSellingPrice() {
         return this.sellingPrice;
+    }
+    public double calculateMarkup() {
+        return getSellingPrice() - getBuyingPrice();
     }
 }
