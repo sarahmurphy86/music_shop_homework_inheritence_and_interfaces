@@ -29,6 +29,10 @@ public class DrumsticksTest {
     public void canGetSellingPrice(){
         assertEquals(3.00, drumsticks.getSellingPrice(), 0.01);
     }
+    @Test
+    public void canSell(){
+        assertEquals(2.00, drumsticks.sell(),0.01);
+    }
 
 
 }
