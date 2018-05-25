@@ -1,5 +1,6 @@
 package Shop;
 
+import Instruments.Guitar;
 import Items.Item;
 
 import java.util.ArrayList;
@@ -19,5 +20,14 @@ public class Shop {
 
     public int stockListCount() {
         return stocklist.size();
+    }
+
+
+    public void addStock(Item item) {
+        this.stocklist.add(item);
+    }
+
+    public void removeStock(Item item) {
+        this.stocklist.remove(item);
     }
 }
