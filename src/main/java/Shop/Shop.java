@@ -3,15 +3,16 @@ package Shop;
 import Instruments.Guitar;
 import Items.Item;
 
+
 import java.util.ArrayList;
 
 public class Shop {
     protected String name;
-    protected ArrayList<Item> stocklist;
+    protected ArrayList<Item> stockList;
 
     public Shop(String name){
         this.name = name;
-        this.stocklist = new ArrayList<>();
+        this.stockList = new ArrayList<>();
     }
 
     public String getName() {
@@ -19,15 +20,25 @@ public class Shop {
     }
 
     public int stockListCount() {
-        return stocklist.size();
+        return stockList.size();
     }
 
 
     public void addStock(Item item) {
-        this.stocklist.add(item);
+        this.stockList.add(item);
     }
 
     public void removeStock(Item item) {
-        this.stocklist.remove(item);
+        this.stockList.remove(item);
+    }
+
+    public double getProfit() {
+        double profit = 0;
+
+        for (Item item : this.stockList){
+            profit += item.calculateMarkup();
+        }
+        return profit;
+
     }
 }
