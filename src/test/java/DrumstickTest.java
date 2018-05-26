@@ -17,7 +17,6 @@ public class DrumstickTest {
     @Test
     public void canGetDescription(){
         assertEquals("Vic Firth", drumstick.getDescription());
-
     }
 
     @Test

@@ -1,14 +1,13 @@
 package Shop;
 
-import Instruments.Guitar;
-import Items.Item;
+import behaviours.ISell;
 
 
 import java.util.ArrayList;
 
 public class Shop {
     protected String name;
-    protected ArrayList<Item> stockList;
+    protected ArrayList<ISell> stockList;
 
     public Shop(String name){
         this.name = name;
@@ -24,18 +23,18 @@ public class Shop {
     }
 
 
-    public void addStock(Item item) {
+    public void addStock(ISell item) {
         this.stockList.add(item);
     }
 
-    public void removeStock(Item item) {
+    public void removeStock(ISell item) {
         this.stockList.remove(item);
     }
 
     public double getProfit() {
         double profit = 0;
 
-        for (Item item : this.stockList){
+        for (ISell item : this.stockList){
             profit += item.calculateMarkup();
         }
         return profit;
